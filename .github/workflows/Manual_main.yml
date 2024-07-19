@@ -1,0 +1,19 @@
+name: Prueba Manual
+
+on: 
+  workflow_dispatch: # disparador manual
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Imprimir mensaje
+      run: echo "hola este es un workflow"
+    - name: checkout código
+      uses: actions/checkout@v2
+      with:
+        repository: Giovanni8793/TallerGithub
+        ref: main
+    - name: cat de archivo llamado prueba
+      run: cat Prueba
